@@ -83,7 +83,7 @@ export class News extends Component {
                     dataLength={this.state.articles?.length || 0}
                     next={this.fetchMoreData}
                     style={{ display: 'flex', flexDirection: 'column-reverse' }}
-                    hasMore={this.state.articles.length < this.state.totalResults}
+                    hasMore={this.state.articles?.length < this.state.totalResults}
                     
                 >
                     <div className='container'>
