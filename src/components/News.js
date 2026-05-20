@@ -80,7 +80,7 @@ export class News extends Component {
                 <h1 className="text-center" style={{margin: '35px 0px'}}>News App - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
                 {this.state.loading && <Spinner/>}
                 <InfiniteScroll
-                    dataLength={this.state.articles.length}
+                    dataLength={this.state.articles?.length || 0}
                     next={this.fetchMoreData}
                     style={{ display: 'flex', flexDirection: 'column-reverse' }}
                     hasMore={this.state.articles.length !== this.state.totalResults}
