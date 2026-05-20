@@ -49,7 +49,7 @@ export class News extends Component {
         let parsedData = await data.json()
         console.log(parsedData)
         this.setState({
-            articles: this.state.articles.concat(parsedData.articles),
+            articles: this.state.articles?.concat(parsedData.articles),
             totalResults: parsedData.totalResults,
             loading: false,
         })
@@ -88,7 +88,7 @@ export class News extends Component {
                 >
                     <div className='container'>
                         <div className="row"> 
-                            {!this.state.loading && this.state.articles.map((element)=>{
+                            {!this.state.loading && this.state.articles?.map((element)=>{
                                 return <div  className="col-md-4"  key={element.url}>
                                     <NewsItem title={element.title?element.title:""} description={element.description?element.description:""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
                                 </div> 
